@@ -1,0 +1,31 @@
+package com.assignment13_march;
+import java.util.Scanner;
+public class ElectricityBill 
+{
+	public static void main(String[] args)
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the consumption :");
+		int con=sc.nextInt();
+		if(con>=0 && con<=100)
+		{
+			System.out.println("Meter Charges- Rs.150");
+			System.out.println("Unit Charges- Rs.100");
+		}
+		else if(con>=101 && con<=200)
+		{
+			System.out.println("Meter Charges- Rs.200");
+			System.out.println("Unit Charges- Rs.150");
+		}
+		else if(con>=201 && con<=300)
+		{
+			System.out.println("Meter Charges- Rs.250");
+			System.out.println("Unit Charges- Rs.200");
+		}
+		else
+		{
+			System.out.println("Meter Charges- Rs.300");
+			System.out.println("Unit Charges- Rs.250");
+		}
+	}
+}
