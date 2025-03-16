@@ -1,0 +1,22 @@
+package com.assignment13_march;
+import java.util.Scanner;
+public class MinDigitInNumber 
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the number: ");
+		int num=sc.nextInt();
+		int min=9;
+		while(num>0)
+		{
+			int digit=num%10;
+			if(digit<min)
+			{
+				min=digit;
+			}
+			num=num/10;
+		}
+		System.out.println(min);
+	}
+}
