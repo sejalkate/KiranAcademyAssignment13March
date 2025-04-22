@@ -1,0 +1,23 @@
+package Series;
+import java.util.Scanner;
+public class PositionAsPower
+{
+	public static void reverse(int num)
+	{
+		int count=1;
+		while(num>0)
+		{
+			int digit=num%10;
+			System.out.println(digit+" raised to power "+count+" ="+Math.pow(digit,count));
+			num=num/10;
+			count++;
+		}
+	} 
+	public static void main(String[] args)
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the number: ");
+		int num=sc.nextInt();
+		reverse(num);
+	}
+}
