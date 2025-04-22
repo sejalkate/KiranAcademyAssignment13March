@@ -1,0 +1,34 @@
+package Series;
+import java.util.Scanner;
+public class CountAsPower 
+{
+	public static int reverse(int num)
+	{
+		int count=0;
+		while(num>0)
+		{
+			int digit=num%10;
+			count++;
+			num=num/10;
+		}
+		return count;
+	} 
+	public static void power(int num,int pow)
+	{
+		while(num>0)
+		{
+			int digit=num%10;
+			System.out.println(digit+" raised to power "+pow+" ="+Math.pow(digit,pow));
+			num=num/10;
+		}
+	}
+	public static void main(String[] args)
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the number: ");
+		int num=sc.nextInt();
+		int count=reverse(num);
+		System.out.println("Count of Digit: "+count);
+		power(num,count);
+	}
+}
