@@ -1,0 +1,22 @@
+import java.util.Scanner;
+public class NumberAsWord 
+{
+	public static void main(String []args)
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the number: ");
+		//Number as a String
+		String number=sc.nextLine();
+		//Array of numbers as a word
+		String words[]= {"Zero","One","Two","Three","Four","Five","Six","Seven","Eight","Nine"};
+		System.out.print("Number in words: ");
+		for(int i=0;i<number.length();i++)
+		{
+			char ch=number.charAt(i);//to access one digit at a time
+			if(Character.isDigit(ch))
+			{
+				System.out.print(words[ch-'0']+" ");//ASCII value of 0 is 48  (So ASCII of ch - ASCII of 0=digit)
+			}
+		}
+	}
+}
