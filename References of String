@@ -1,0 +1,18 @@
+package StringPrograms;
+public class Reference
+{
+	public static void main(String[] args) 
+	{
+		String s1="Mango";
+		String s2="Mango";
+		System.out.println(s1);
+		System.out.println(s2);
+		System.out.println(s1.hashCode()+" --- "+s2.hashCode());
+		System.out.println();
+		String s3=new String("Lemon");
+		String s4=new String("Lemon");
+		System.out.println(s3);
+		System.out.println(s4);
+		System.out.println(s3.hashCode()+" --- "+s4.hashCode());
+	}
+}
