@@ -1,0 +1,88 @@
+package StringPrograms;
+public class PalindromeStringInClass 
+{
+	//Define a method to remove space from String and return it.
+	//Define a method to remove sepcial characters and numbers from String and return it.
+	//Define a method to convert String into lower case and return it.
+	public static void main(String[] args)
+	{
+		String s1="Sejal --&-- lajeS";
+		System.out.println("Original String: "+ s1);
+		//System.out.println();
+		
+		//Remove spaces
+		String s3=removeSpace(s1);
+		//System.out.println("After removing space : "+ s3);
+		
+		//Remove special characters and numbers
+		String s5=removeSpecial(s3);
+		//System.out.println("After removing special symbols and numbers : "+s5);
+		
+		//Convert into lowercase
+		String s7=LowerCase(s5);
+		//System.out.println("After converting to lower case : "+s7);
+		
+		//Check palindrome
+		System.out.println();
+		checkPalindrome(s7);
+	}
+	public static void checkPalindrome(String s7) 
+	{
+		int i=0,j=s7.length()-1;
+		boolean flag=true;
+		while(i<s7.length()/2)
+		{
+			if(s7.charAt(i)!=s7.charAt(j))
+			{
+				flag=false;
+				break;
+			}
+			i++;
+			j--;
+		}
+		if(flag==true)
+		{
+			System.out.println("String is palindrome");
+		}
+		else
+		{
+			System.out.println("String is not a palindrome");
+		}
+	}
+	public static String removeSpace(String s1) 
+	{
+		String s2=s1.replace(" ","");
+		return s2;
+	}
+	public static String removeSpecial(String s3)
+	{
+		String s4="";
+		for(int i=0;i<s3.length();i++)
+		{
+			int ch=s3.codePointAt(i);
+			if((ch>=65 && ch<=90)|| (ch>=97 &&  ch<=122))
+			{
+				s4=s4+(char) ch;
+			}
+		}
+		return s4;
+	}
+	public static String LowerCase(String s5)
+	{
+		String s6="";
+		for(int i=0;i<s5.length();i++)
+		{
+			int ch=s5.codePointAt(i);
+			if(ch>=65 && ch<=90)
+			{
+				s6=s6+(char)(ch+32);
+			}
+			else
+			{
+				s6=s6+(char)(ch);
+			}
+		}
+		return s6;
+	}
+	
+}
