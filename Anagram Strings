@@ -1,0 +1,71 @@
+package StringPrograms;
+import java.util.Arrays;
+public class AnagramStrings 
+{
+	public static void main(String[] args) 
+	{
+		String s1="Is that my pen";
+		String s2="This payment";
+		System.out.println("1st String: "+s1);
+		System.out.println("2nd String: "+s2);
+		System.out.println();
+		String s3=removeSpace(s1);
+		String s4=removeSpace(s2);
+		String s5=removeSpecial(s3);
+		String s6=removeSpecial(s4);
+		String s7=lowerCase(s5);
+		String s8=lowerCase(s6);
+		char ch1[]=s7.toCharArray();
+		char ch2[]=s8.toCharArray();
+		Arrays.sort(ch1);
+		Arrays.sort(ch2);
+		String s9=String.valueOf(ch1);
+		String s10=String.valueOf(ch2);
+		System.out.println("1st Sorted String: "+s9);
+		System.out.println("2nd Sorted String: "+s10);
+		System.out.println();
+		if(s9.equals(s10))
+		{
+			System.out.println("Anagram Strings");
+		}
+		else
+		{
+			System.out.println("Not Anagram Strings");
+		}
+	}
+	public static String removeSpace(String s)
+	{
+		String s1=s.replace(" ","");
+		return s1;
+	}
+	public static String removeSpecial(String s) 
+	{
+		String s2="";
+		for(int i=0;i<s.length();i++)
+		{
+			int ch=s.codePointAt(i);
+			if((ch>=65 && ch<90)|| (ch>=97 && ch<=122))
+			{
+				s2=s2+(char) ch;
+			}	
+		}
+		return s2;
+	}
+	public static String lowerCase(String s)
+	{
+		String s3="";
+		for(int i=0;i<s.length();i++)
+		{
+			int ch=s.codePointAt(i);
+			if(ch>=65 && ch<=90)
+			{
+				s3=s3+(char)(ch+32);
+			}
+			else
+			{
+				s3=s3+(char)(ch);
+			}
+		}
+		return s3;
+	}
+}
