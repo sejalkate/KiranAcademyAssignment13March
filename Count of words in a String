@@ -1,0 +1,21 @@
+package StringPrograms;
+public class WordsInString
+{
+	public static void countWords(String s)
+	{
+		int count=1;
+		for(int i=0;i<s.length();i++)
+		{
+			if(s.charAt(i)==' ')
+			{
+				count++;
+			}
+		}
+		System.out.println("Count: "+count);
+	}
+	public static void main(String[] args)
+	{
+		String s1="There are 25 elephants and 100 horses in Shiv Jayanti Celebration.";
+		countWords(s1);
+	}
+}
