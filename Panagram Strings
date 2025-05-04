@@ -1,0 +1,61 @@
+package StringPrograms;
+
+import java.util.Arrays;
+
+public class Panagram
+{
+	private static String removeSpace_Lower(String s) 
+	{
+		String s1=s.replace(" ","").toLowerCase();
+		System.out.print("After removing space and converting into lower case--->   "+ s1);
+		System.out.println();
+		return s1;
+	}
+	public static String sort(String s) 
+	{
+		char ch1[]=s.toCharArray();
+		Arrays.sort(ch1);
+		String s1=String.valueOf(ch1);
+		System.out.print("After sorting--->   "+s1);
+		System.out.println();
+		return s1;
+	}
+	public static boolean checkPanagram(String s)
+	{
+		boolean alphabetPresent[]=new boolean[26];
+		for(int i=0;i<s.length();i++)
+		{
+			char ch=s.charAt(i);
+			if(ch>='a' && ch<='z')
+			{
+				alphabetPresent[ch-'a']=true;
+			}
+		}
+		for(boolean present:alphabetPresent)
+		{
+			if(!present)
+			{
+				return false;
+			}
+		}
+		return true;
+	}
+	public static void main(String[] args)
+	{
+		String s1="The quick brown fox jumps over the lazy dog";
+		System.out.println("Original String--->   "+s1);
+		System.out.println();
+		String s2=removeSpace_Lower(s1);
+		String s3=sort(s2);
+		boolean flag=checkPanagram(s3);
+		System.out.println();
+		if(flag==true)
+		{
+			System.out.println("String is Panagram");
+		}
+		else
+		{
+			System.out.println("String is not Panagram");
+		}
+	}
+}
